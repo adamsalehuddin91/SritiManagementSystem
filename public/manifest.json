@@ -1,0 +1,26 @@
+{
+  "name": "Sistem Pengurusan SRITI",
+  "short_name": "SRITI",
+  "description": "Sistem pengurusan sekolah SRITI — yuran, invois, portal ibu bapa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#15803d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "ms-MY"
+}
