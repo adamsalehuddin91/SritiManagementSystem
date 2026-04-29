@@ -10,7 +10,8 @@ import {
   Settings,
   LogOut,
   X,
-  User
+  User,
+  ClipboardList,
 } from 'lucide-react'
 import { logout } from '@/app/login/actions'
 
@@ -18,6 +19,7 @@ const navItems = [
   { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
   { label: 'Pelajar', href: '/dashboard/pelajar', icon: Users },
   { label: 'Yuran & Bayaran', href: '/dashboard/yuran', icon: CreditCard },
+  { label: 'Tracker Yuran', href: '/dashboard/tracker', icon: ClipboardList },
   { label: 'Laporan', href: '/dashboard/laporan', icon: BarChart3 },
   { label: 'Tetapan', href: '/dashboard/tetapan', icon: Settings },
 ]
