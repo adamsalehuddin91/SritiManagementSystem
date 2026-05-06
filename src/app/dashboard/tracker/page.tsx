@@ -100,14 +100,14 @@ export default function TrackerPage() {
 
     // Build rows
     const built: StudentRow[] = (students ?? []).map(s => {
-      const sg = (s.student_guardians as { guardians: { full_name: string; phone: string } | null }[] | null)?.[0]
+      const sg = (s.student_guardians as unknown as { guardians: { full_name: string; phone: string } | null }[] | null)?.[0]
       const inv = invoiceMap.get(s.id)
       return {
         id: s.id,
         full_name: s.full_name,
         student_no: s.student_no,
         year_level: s.year_level,
-        class_name: (s.classes as { name: string } | null)?.name ?? null,
+        class_name: (s.classes as unknown as { name: string } | null)?.name ?? null,
         guardian_name: sg?.guardians?.full_name ?? null,
         guardian_phone: sg?.guardians?.phone ?? null,
         invoice_id: inv?.id ?? null,
@@ -123,12 +123,12 @@ export default function TrackerPage() {
       if (!tMap.has(inv.student_id)) {
         const stu = (students ?? []).find(s => s.id === inv.student_id)
         if (!stu) continue
-        const sg = (stu.student_guardians as { guardians: { full_name: string; phone: string } | null }[] | null)?.[0]
+        const sg = (stu.student_guardians as unknown as { guardians: { full_name: string; phone: string } | null }[] | null)?.[0]
         tMap.set(inv.student_id, {
           id: stu.id,
           full_name: stu.full_name,
           student_no: stu.student_no,
-          class_name: (stu.classes as { name: string } | null)?.name ?? null,
+          class_name: (stu.classes as unknown as { name: string } | null)?.name ?? null,
           guardian_phone: sg?.guardians?.phone ?? null,
           months: [],
         })
