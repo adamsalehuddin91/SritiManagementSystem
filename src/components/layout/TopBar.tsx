@@ -32,6 +32,16 @@ export default function TopBar({ title, onMenuClick }: TopBarProps) {
 
   useEffect(() => {
     fetchPending()
+
+    // Realtime — re-fetch whenever any invoice row changes
+    const channel = supabase
+      .channel('invoice-status-changes')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'invoices' }, () => {
+        fetchPending()
+      })
+      .subscribe()
+
+    return () => { supabase.removeChannel(channel) }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
