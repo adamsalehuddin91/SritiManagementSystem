@@ -40,8 +40,8 @@ export default function PelajarPage() {
       .order('year_level')
       .order('full_name')
 
-    setStudents((data ?? []) as Student[])
-    setFiltered((data ?? []) as Student[])
+    setStudents((data ?? []) as unknown as Student[])
+    setFiltered((data ?? []) as unknown as Student[])
     setLoading(false)
   }, [supabase])
 
